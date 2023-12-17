@@ -1,0 +1,47 @@
+form input {
+    width: 200px;
+    height: 30px;
+    fill: #C6C6C6;
+    mix-blend-mode: darken;
+    border-radius: 30px;
+    border-color: burlywood;
+    /* background: #D8C3A5; */
+    mix-blend-mode: darken;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #E85A4F;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+label {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin: 0 10px;
+}
+
+button {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    border-radius: 30px;
+    width: 220px;
+    height: 40px;
+    background: #D8C3A5;
+    margin: 20px 0;
+}

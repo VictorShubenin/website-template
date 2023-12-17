@@ -1,0 +1,29 @@
+extends layout
+
+block head 
+    link(rel="stylesheet", href="blog.css")
+
+block content
+    section
+        h1 Стоит прочитать
+        div.suggessted-articles-container
+            each article in suggestedArticles
+                div.blog-article-example
+                    img(src=article.image ? "/uploads/" + article.image : "main-article-image.jpeg" alt="Пример статьи")
+                    p= article.title
+
+    section
+        div.article-sort
+            h1 Все статьи
+        div.articles-container
+            each article in articles
+                a(href="/article/" + article.id).article-card
+                    div.blog-icon
+                        span 
+                            img(src="star.svg", alt="В избранные")
+                        span 
+                            img(src="like.png", alt="Нравится")
+                            span.article-like-counter= article.likes_count
+                    img(src=article.image ? "/uploads/" + article.image : "main-article-image.jpeg", alt="Пример статьи")
+                    p= article.title
+            

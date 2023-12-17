@@ -1,0 +1,89 @@
+.blog-article-example {
+    display: flex;
+    flex-direction: column;
+}
+
+.blog-article-example img {
+    width: 290px;
+    height: 232px;
+    border-radius: 50px; 
+}
+
+.blog-article-example p {
+    color: #E98074;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.suggessted-articles-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+section h1 {
+    color: #E85A4F;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 55px;
+}
+
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.article-like-counter {
+    color: #8E8D8A;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.article-sort {
+    display: flex;
+    justify-content: space-evenly;
+    color: #E98074;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.article-card p {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.article-card > img {
+    width: 447px;
+    height: 319px;
+    border-radius: 100px 220px 100px 100px; 
+}
+
+.article-card span img {
+    width: 48px;
+    height: 47px;
+}
+
+.blog-icon {
+    display: flex;
+    justify-content: space-between;
+}

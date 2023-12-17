@@ -1,0 +1,10 @@
+extends ../layout 
+
+block head 
+    link(rel="stylesheet", href="/article.css")
+
+block content 
+    h1 Редактирование статьи
+    p= article.title
+    include form.pug
+    +article-form(article.title, article.content, "/articles/edit/" + article.id)
