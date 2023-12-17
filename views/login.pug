@@ -1,0 +1,20 @@
+extends layout 
+
+block head 
+    link(rel="stylesheet", href="form.css")
+
+block content
+    if userFound === false
+        h2 Пользователь не найден
+    h1 Вход
+    form(action="/login", method="post")
+        div
+            label Логин:
+            input(type="text", value="" name="login")
+        div 
+            label Пароль:
+            input(type="password", value="" name="password")
+        div 
+            button Войти
+
+            

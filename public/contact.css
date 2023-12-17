@@ -1,0 +1,49 @@
+.background {
+    width: 1440px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    fill: #D8C3A5;
+}
+
+.background input, button {
+    color: black; 
+    text-align: center;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px; 
+    margin: 15px 0;
+}
+
+body{
+    background-image: url("background.jpg");
+    opacity: 70%;
+}
+
+.subject {
+    width: 794px;
+    border-radius: 30px;
+    background: #D8C3A5;
+    mix-blend-mode: darken;
+    margin: 20px 0;
+}
+
+.subject::placeholder {
+    text-decoration-color: black;
+}
+.letter-text {
+    width: 794px;
+    height: 606px;
+    background: #D8C3A5;
+    mix-blend-mode: darken;
+    border-radius: 30px;
+}
+
+.send-letter {
+    border-radius: 30px;
+    width: 181px;
+    height: 48px; 
+    background: #D8C3A5;
+}

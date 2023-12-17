@@ -1,0 +1,121 @@
+h1 {
+    color: #E85A4F;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.article-content p {
+    color: #000;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+}
+
+.article {
+    width: 894px;
+}
+
+.article .image {
+    width: 500px;
+}
+
+.container input {
+    height: 40px;
+}
+
+.container textarea {
+    height: 500px;
+}
+
+input, textarea {
+    width: 821px;
+    height: 180px;
+    fill: #C6C6C6;
+    mix-blend-mode: darken;
+    border-radius: 30px;
+    border-color: burlywood;
+    /* background: #D8C3A5; */
+    mix-blend-mode: darken;
+    margin: 20px 0;
+}
+
+input::placeholder {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    }
+
+.container button {
+    width: 195px;
+    height: 55px;
+    border-radius: 30px;
+    background: #C6C6C6;
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+
+    border-radius: 30px;
+    width: 181px;
+    height: 48px;
+    background: #D8C3A5;
+}
+
+.user-comment {
+    color: #000;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 36px;
+    display: flex;
+    margin: 186px 0;
+}
+
+.user-photo {
+    width: 116px;
+    height: 112px;
+    flex-shrink: 0;
+}
+
+#username {
+    width: 353px;
+    height: 34px;
+    border-radius: 15px;
+    background: #C6C6C6;
+}
+
+#article-comment {
+    width: 1247px;
+    height: 180px;
+    border-radius: 15px;
+    background: #C6C6C6;
+    mix-blend-mode: darken;
+}
+
+.input-comment input {
+    display: flex;
+    flex-direction: column;
+    border-radius: 30px;
+    background: #C6C6C6;
+    width: 821px;
+    height: 50px;
+    flex-shrink: 0;
+}
+
+.like, .dislike {
+    cursor: pointer;
+}

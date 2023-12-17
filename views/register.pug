@@ -1,0 +1,17 @@
+extends layout 
+
+block head 
+    link(rel="stylesheet", href="form.css")
+
+block content
+    h1 Регистрация
+    form(action="/register", method="post")
+        div
+            label Логин:
+            input(type="text", value="" name="login")
+        div 
+            label Пароль:
+            input(type="password", value="" name="password")
+        div 
+            button Зарегистрироваться
+            

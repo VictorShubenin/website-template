@@ -1,0 +1,43 @@
+extends layout
+
+block head 
+    link(rel="stylesheet", href="/article.css")
+    script(src="/script.js")
+    
+
+block content 
+    section.article
+        h1= article.title
+
+        img(src="/uploads/" + article.image, alt="Статья").image
+
+        article.article-content!= markdown
+        div 
+            span(data-article=article.id).dislike
+                //img(src="/ellipse-rose.svg", alt="Эллипс розовый")
+                img(src="/like.png", alt="Не нравится")
+                span= article.dislikes_count
+            span(data-article=article.id).like
+                //img(src="/ellipse-green.svg", alt="Эллипс зеленый")
+                img(src="/like.png", alt="Нравится")
+                span= article.likes_count
+
+        if isAdmin
+            div 
+                a(href="/articles/edit/" + article.id)  Редактировать статью
+
+        div.input-comment
+            if userId
+                form(action="/comments", method="post")
+                    textarea(name="content", cols="30", rows="10")
+                    input(name="articleId", value=article.id, type="hidden")
+                    button Добавить
+        each comment in article.Comments
+            div.user-comment
+                div.user-photo
+                    img(src="/photo-user.svg", alt="Фотография пользователя")
+                div.user-data
+                    div#username
+                        a(href="#") Никнейм 
+                    div#article-comment
+                        p= comment.content
