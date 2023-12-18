@@ -12,12 +12,16 @@ const Sequelize = require("sequelize")
 const Article = require('./models/article')
 const User = require('./models/user')
 const Comment = require('./models/comment')
-const Report = require('./models/report')
+const Report = require('./models/report');
+const { log } = require('console');
 
 const md = markdownit()
 
 Article.hasMany(Comment, {foreignKey: 'article_id'});
 Comment.belongsTo(Article, {foreignKey: 'article_id'});
+User.hasMany(Comment, {foreignKey: 'user_id'});
+Comment.belongsTo(User, {foreignKey: 'user_id'});
+
 
 try {
     db.authenticate();
@@ -36,8 +40,15 @@ app.set('view engine', 'pug')
 app.use(cookieParser())
 app.use((req, res, next) => {
     const userId = req.cookies.userId;
+    User.findByPk(userId).then(user => {
+        
+        if (user && user.is_admin) {
+            res.locals.isAdmin = true;
+        } else {
+            res.locals.isAdmin = false;
+        }
+    })
     res.locals.userId = userId;
-    console.log(userId);
     next()
 })
 
@@ -97,25 +108,14 @@ app.get('/logout', (req, res) => {
 
 app.get('/article/:articleId', (req, res, next) => {
     const articleId = req.params.articleId;
-    Article.findByPk(articleId, { include: Comment }).then(article => {
+    Article.findByPk(articleId, { include: [ { model: Comment, include: { model: User } } ] }).then(article => {
         if (article === null) {
             const error = new Error('Not Found');
             error.status = 404;
             throw error;
         }
-        console.log(article);
-        const comments = Comment.findAll({ include: Article });
-
         const markdown = md.render(article.content);
-
-        const userId = res.locals.userId;
-        User.findByPk(userId).then(user => {
-            if (user && user.is_admin) {
-                res.render('article', {article : article, markdown : markdown, isAdmin : true});
-            } else {
-                res.render('article', {article : article, markdown : markdown, isAdmin : false});
-            }
-        })
+        res.render('article', {article : article, markdown : markdown});
     }).catch(error => {
         next(error);
     });
@@ -131,7 +131,6 @@ app.get('/contact', (req, res) => {
             });
         } else {
             let status;
-            console.log("params: ", res.locals)
             if (req.query.status === "success") {
                 status = true;
             } 
@@ -158,7 +157,11 @@ const upload = multer({
   });
 
 app.post('/articles/create', upload.single("image"), (req, res) => {
-    Article.create({ title: req.body.title, content: req.body.content, image : req.file.filename })
+    let filename = null;
+    if (req.file) {
+        filename = req.file.filename;
+    }
+    Article.create({ title: req.body.title, content: req.body.content, image : filename })
         .then(article => {
             res.redirect('/blog')
         })
@@ -182,7 +185,12 @@ app.get('/articles/edit/:articleId', (req, res) => {
     });
 })
 
-app.post('/articles/edit/:articleId', (req, res) => {
+app.post('/articles/edit/:articleId',upload.single("image"), (req, res) => {
+    let filename = null;
+    if (req.file) {
+        filename = req.file.filename;
+    }
+
     const articleId = req.params.articleId;
     Article.findByPk(articleId).then(article => {
         if (article === null) {
@@ -190,13 +198,31 @@ app.post('/articles/edit/:articleId', (req, res) => {
             error.status = 404;
             throw error;
         } else {
+            console.log(req.body);
             article.title = req.body.title;
             article.content = req.body.content;
+            article.image = filename;
             article.save().then(article => {
-                res.redirect('articles/:articleId')
+                console.log(article);
+                res.redirect('/article/' + articleId)
             });
         }
-        res.redirect('articles/:articleId')
+    })
+})
+
+app.get('/articles/delete/:articleId', (req, res) => {
+    const articleId = req.params.articleId;
+    Article.findByPk(articleId).then(article => {
+        if (article === null) {
+            const error = new Error('Not Found');
+            error.status = 404;
+            throw error;
+        } else {
+            article.destroy().then(article => {
+                res.redirect('/blog')
+            });
+        }
+        res.redirect('/blog')
     })
 })
 
@@ -258,10 +284,10 @@ app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
 })
 
-// app.use((req, res, next) => {
-//     res.status(404).render("404")
-// })
+app.use((req, res, next) => {
+    res.status(404).render("404")
+})
 
-// app.use((error, req, res, next) => {
-//     res.status(404).render("404")
-// })
+app.use((error, req, res, next) => {
+    res.status(404).render("404")
+})

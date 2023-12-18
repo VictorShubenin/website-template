@@ -16,6 +16,10 @@ h1 {
     line-height: 36px;
 }
 
+article {
+    text-align: start;
+}
+
 .article {
     width: 894px;
 }
