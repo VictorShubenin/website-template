@@ -24,7 +24,8 @@ block content
 
         if isAdmin
             div 
-                a(href="/articles/edit/" + article.id)  Редактировать статью
+                a(href="/articles/edit/" + article.id) Редактировать статью
+                a(href="/articles/delete/" + article.id) Удалить статью
 
         div.input-comment
             if userId
@@ -35,9 +36,9 @@ block content
         each comment in article.Comments
             div.user-comment
                 div.user-photo
-                    img(src="/photo-user.svg", alt="Фотография пользователя")
+                    img(src="/user.png", alt="Фотография пользователя")
                 div.user-data
                     div#username
-                        a(href="#") Никнейм 
+                        span= comment.user.name
                     div#article-comment
                         p= comment.content

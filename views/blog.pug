@@ -15,6 +15,8 @@ block content
     section
         div.article-sort
             h1 Все статьи
+        if isAdmin
+            a(href="/articles/create") Добавить статью 
         div.articles-container
             each article in articles
                 a(href="/article/" + article.id).article-card
