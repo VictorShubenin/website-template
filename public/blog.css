@@ -1,3 +1,6 @@
+
+
+
 .blog-article-example {
     display: flex;
     flex-direction: column;
@@ -10,7 +13,7 @@
 }
 
 .blog-article-example p {
-    color: #E98074;
+    color: #777E15;
     text-align: center;
     font-family: Raleway;
     font-size: 20px;
@@ -25,7 +28,7 @@
 }
 
 section h1 {
-    color: #E85A4F;
+    color: #777E15;
     text-align: center;
     font-family: Raleway;
     font-size: 55px;
@@ -62,28 +65,66 @@ section h1 {
     line-height: normal;
 }
 
-.article-card p {
-    color: #000;
-    text-align: center;
-    font-family: Raleway;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
+
+
+
+
+
+.article-card {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	padding: 20px;
+	border: 1px solid #777E15;
+	border-radius: 10px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	transition: transform 0.3s ease-in-out;
+	
+}
+
+.article-card:hover {
+	transform: translateY(-5px);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .article-card > img {
-    width: 447px;
-    height: 319px;
-    border-radius: 100px 220px 100px 100px; 
+	width: 100%;
+	max-width: 447px;
+	height: auto;
+	border-radius: 10px;
+	margin-bottom: 10px;
 }
 
-.article-card span img {
-    width: 48px;
-    height: 47px;
+.article-card p {
+	color: #3E4200;
+	font-family: Raleway;
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 1.5;
+	margin-bottom: 10px;
 }
 
 .blog-icon {
-    display: flex;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content:space-between;
+	margin-bottom: 10px;
+	width: 100%;
 }
+
+.blog-icon img {
+	width: 30px;
+	height: 30px;
+	margin: 0 5px;
+	
+}
+
+.article-like-counter {
+	color: #777E15;
+	font-family: Raleway;
+	font-size: 47px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+

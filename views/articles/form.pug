@@ -2,9 +2,9 @@ mixin article-form(title, content, action)
     form(action=action, method="post", enctype="multipart/form-data")
         div 
             input(type="text", value=title, name="title" placeholder="Название статьи")
-        div
+        div.text
             textarea(name="content")= content
-        div 
+        div.file
             input(type="file", name="image")
         div 
         button Сохранить

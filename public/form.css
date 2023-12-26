@@ -7,11 +7,11 @@ form input {
     border-color: burlywood;
     /* background: #D8C3A5; */
     mix-blend-mode: darken;
-    margin: 20px 0;
+    margin: 5px 0;
 }
 
 h1 {
-    color: #E85A4F;
+    color: #777E15;
     text-align: center;
     font-family: Raleway;
     font-size: 55px;
@@ -31,17 +31,45 @@ label {
     margin: 0 10px;
 }
 
-button {
-    color: #000;
-    text-align: center;
-    font-family: Raleway;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 36px;
-    border-radius: 30px;
-    width: 220px;
-    height: 40px;
-    background: #D8C3A5;
-    margin: 20px 0;
+
+
+
+
+form {
+  width: 300px;
+  margin: 0 auto;
 }
+
+form div {
+  margin-bottom: 5px;
+}
+
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"],
+button {
+  width: 100%;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button {
+	margin-top: 15px;
+  background-color: #c5ce4d;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease; 
+}
+
+button:hover {
+  background-color: #a1a84f; }

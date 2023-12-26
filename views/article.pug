@@ -15,11 +15,11 @@ block content
         div 
             span(data-article=article.id).dislike
                 //img(src="/ellipse-rose.svg", alt="Эллипс розовый")
-                img(src="/like.png", alt="Не нравится")
+                img(src="/like.svg", alt="Не нравится")
                 span= article.dislikes_count
             span(data-article=article.id).like
                 //img(src="/ellipse-green.svg", alt="Эллипс зеленый")
-                img(src="/like.png", alt="Нравится")
+                img(src="/like.svg", alt="Нравится")
                 span= article.likes_count
 
         if isAdmin

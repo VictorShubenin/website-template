@@ -4,8 +4,19 @@
     font-weight: 400;
 }
 
+
+
 html {
-    background: #EAE7DC;
+	background-color: #F7FCA8;
+		background-image: 
+		
+		linear-gradient(180deg, #CBD269 0%, rgba(234, 231, 220, 0.00) 116px),
+		linear-gradient(0deg, #CBD269 0%, rgba(234, 231, 220, 0.00) 116px);
+
+		
+		
+		
+	
 }
 .menu-item {
 
@@ -19,7 +30,7 @@ html {
 }
 
 .menu-item a {
-    color: #8E8D8A;
+    color: #4F5400;
     text-decoration: none;
 }
 
@@ -28,7 +39,10 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 275px;
+		min-width: 1410px;
 }
+
+
 
 .menu {
     display: flex;
@@ -37,7 +51,7 @@ header {
 }
 
 .logo a {
-    color: #8E8D8A;
+    color: #4F5400;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Raleway;
@@ -60,17 +74,18 @@ main {
 
 footer {
     display: flex;
-    width: 1440px;
+    width: 100%;
     padding: 15px 0px 3px 0px;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     gap: 15px;
     height: 150px;
+		
 }
 
 #social-media {
-    color: #8E8D8A;
+    color: #4F5400;
     text-align: center;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     font-family: Raleway;
@@ -78,6 +93,8 @@ footer {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+
+		margin-bottom: 15px;
 }
 
 footer img {
@@ -86,9 +103,12 @@ footer img {
     flex-shrink: 0;
 }
 
+
+
 footer div {
     display: flex;
     gap: 27px;
+		
 }
 
 #copyright {
@@ -111,13 +131,20 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    background: linear-gradient(180deg, #D8C3A5 0%, rgba(234, 231, 220, 0.00) 116px);
-    margin: 0;
+   
+    margin: 0 auto;
     padding: 20px 0;
+
+		width: 100%;
+	
+ /* margin: 0 auto; /* Центрирование контейнера */
+	
 }
 
 .container {
-    max-width: 1440px;
+    max-width: 1410px;
+		
+		margin: 0px auto
 }
 
 .main-about-me {
