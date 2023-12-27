@@ -4,7 +4,9 @@
     font-weight: 400;
 }
 
-
+a {
+	text-decoration: none;
+}
 
 html {
 	background-color: #F7FCA8;

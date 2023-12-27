@@ -33,7 +33,7 @@ article {
 }
 
 .container textarea {
-    height: 500px;
+    height: 150px;
 }
 
 input, textarea {
@@ -48,6 +48,11 @@ input, textarea {
   box-sizing: border-box; 
 	resize: vertical;
 }
+
+
+
+
+
 
 input::placeholder {
     color: #000;
@@ -77,58 +82,48 @@ input::placeholder {
 }
 
 
-.user-comment {
-    color: #000;
-    text-align: center;
-    font-family: Raleway;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 36px;
-    display: flex;
-    margin: 186px 0;
-}
-
-.user-photo {
-    width: 116px;
-    height: 112px;
-    flex-shrink: 0;
-}
-
-#username {
-    width: 100px;
-    height: 34px;
-    border-radius: 15px;
-    background: #C6C6C6;
-}
-
-#article-comment {
-    width: 1247px;
-    height: 180px;
-    border-radius: 15px;
-    background: #C6C6C6;
-    mix-blend-mode: darken;
-}
-
-.input-comment input {
-    display: flex;
-    flex-direction: column;
-    border-radius: 30px;
-    background: #C6C6C6;
-    width: 821px;
-    height: 50px;
-    flex-shrink: 0;
+.input-comment button:hover{
+	background-color: #a1a84f;
 }
 
 .like, .dislike {
     cursor: pointer;
+		border-radius: 50%;
+		display: flex;
+    align-items: center;
+		justify-content: center;
+		width: 80px;
+    height: 80px;
 }
 
+
+.like{
+	background-color:#8aee47;
+}
+
+.dislike{
+
+	background-color:#eb3a3a;
+}
 .like img{
 	width: 48px;
 	height: 48px;
 	
 }
+
+
+
+
+.feedback{
+	display: flex;
+	justify-content:end;
+}
+
+
+
+
+
+
 
 .dislike img{
 	width:  48px;
@@ -142,4 +137,56 @@ input::placeholder {
 }
 .text textarea{
 	min-height: 700px;
+}
+
+
+
+
+
+.user-comment {
+	background-color: #F7FCB8; /* Изменен цвет фона */
+	border-radius: 8px;
+	padding: 12px;
+	margin-top: 20px;
+	overflow: auto;
+	font-family: Raleway;
+	display: flex;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавлена тень */
+}
+
+
+.user-comment .user-photo {
+	margin-right: 10px;
+}
+
+.user-comment .user-photo img {
+	width: 50px; /* Adjust size as needed */
+	height: 50px; /* Adjust size as needed */
+	border-radius: 50%;
+}
+
+.user-comment .user-data {
+	display: flex;
+ /* Чтобы элементы выровнялись по вертикали */
+	
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.user-comment #username {
+	font-weight: bold;
+	margin-right: 10px; /* Добавляем небольшой отступ между именем и текстом */
+}
+
+.user-comment p {
+	font-size: 16px;
+	line-height: 1.4;
+	color: #333;
+	overflow: visible; /* Отображаем весь текст без обрезки */
+	display: block; /* Используем block для правильного отображения текста */
+	margin-top: 20px; /* Добавляем отступ сверху текста */
+}
+
+.file input{
+	resize: none;
 }

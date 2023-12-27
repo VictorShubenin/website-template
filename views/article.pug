@@ -12,7 +12,7 @@ block content
         img(src="/uploads/" + article.image, alt="Статья").image
 
         article.article-content!= markdown
-        div 
+        div.feedback
             span(data-article=article.id).dislike
                 //img(src="/ellipse-rose.svg", alt="Эллипс розовый")
                 img(src="/like.svg", alt="Не нравится")
@@ -30,7 +30,7 @@ block content
         div.input-comment
             if userId
                 form(action="/comments", method="post")
-                    textarea(name="content", cols="30", rows="10")
+                    textarea(name="content", cols="30", rows="10",class="comment-textarea")
                     input(name="articleId", value=article.id, type="hidden")
                     button Добавить
         each comment in article.Comments
