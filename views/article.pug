@@ -9,7 +9,7 @@ block content
     section.article
         h1= article.title
 
-        img(src="/uploads/" + article.image, alt="Статья").image
+        img(src="/uploads/" + article.image, alt="Статья" style="font-family: Raleway;").image
 
         article.article-content!= markdown
         div.feedback
@@ -24,8 +24,8 @@ block content
 
         if isAdmin
             div.admin-btn
-                a(class="link-edit",href="/articles/edit/" + article.id) Редактировать статью
-                a(class="link-delete",href="/articles/delete/" + article.id) Удалить статью
+                a(class="link-edit",href="/articles/edit/" + article.id) Редактировать
+                a(class="link-delete",href="/articles/delete/" + article.id) Удалить
 
         div.input-comment
             if userId

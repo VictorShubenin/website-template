@@ -17,13 +17,15 @@
     margin: 15px 0;
 }
 
-body{
+body {
     background-image: url("background.png");
 		background-repeat: no-repeat;
 		background-size: cover;
 }
 
-
+input::placeholder, textarea::placeholder {
+  color: #000 !important;
+}
 
 
 input[type="email"],
@@ -34,16 +36,16 @@ textarea {
   margin-bottom: 20px;
   border: none;
   border-bottom: 1px solid #ccc;
-  background-color: #F7FCA8; 
+  background-color: #ffffff; 
   font-size: 16px;
   font-family: Arial, sans-serif;
   box-sizing: border-box; 
 	resize: vertical;
-	
 }
 
 
 button.send-letter {
+  font-family: Raleway;
   background-color: #c5ce4d;
   color: #fff;
   padding: 15px 30px;
@@ -55,7 +57,7 @@ button.send-letter {
 }
 
 button.send-letter:hover {
-  background-color: #a1a84f;
+  background-color: #4b5012;
 }
 
 
@@ -64,7 +66,7 @@ form {
   max-width: 500px;
   margin: 20px auto;
   padding: 40px;
-  background-color: #fff;
+  background-color: #F7FCA8;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
