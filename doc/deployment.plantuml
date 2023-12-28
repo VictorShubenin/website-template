@@ -1,0 +1,18 @@
+@startuml 
+
+left to right direction
+
+node server as "<< device >>\nWeb-сервер"{
+
+    component node as "NodeJS"
+    component database as "PostgreSQL"
+}
+
+node device as "<< device >>\nПользовательское устройство" {
+    component browser as "Браузер"
+}
+
+server -- device : HTTP
+
+
+@enduml
