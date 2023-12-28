@@ -10,7 +10,7 @@ block content
             each article in suggestedArticles
                 div.blog-article-example
                     img(src=article.image ? "/uploads/" + article.image : "main-article-image.jpeg" alt="Пример статьи")
-                    p= article.title
+                    a(href="/article/" + article.id)= article.title
 
     section
         div.article-sort

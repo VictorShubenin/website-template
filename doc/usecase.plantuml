@@ -1,0 +1,51 @@
+@startuml
+
+left to right direction
+
+Actor Administrator as "Администратор"
+Actor User as "Пользователь"
+Actor Guest as "Гость"
+
+usecase ReadArticle as "Посмотреть статью"
+usecase RateArticle as "Оценить статью"
+usecase SetLike as "Поставить 'Нравится'"
+usecase SetDislike as "Поставить 'Не нравится'"
+usecase LeaveOpinion as "Оставить мнение"
+usecase CommentArticle as "Комментировать статью"
+usecase CiteComment as "Цитировать комментарий"
+usecase ManageContent as "Управлять контентом"
+usecase CreateArticle as "Создать статью"
+usecase EditArticle as "Редактировать статью"
+usecase DeleteArticle as "Удалить статью"
+usecase Contact as "Связаться с администратором"
+usecase Register as "Зарегистрироваться"
+usecase Login as "Войти"
+usecase ViewReports as "Смотреть обращения"
+
+RateArticle ..> SetLike : extends
+RateArticle ..> SetDislike : extends
+
+LeaveOpinion ..> CommentArticle : extends
+LeaveOpinion ..> CiteComment : extends
+
+ManageContent ..> CreateArticle : extends
+ManageContent ..> EditArticle : extends
+ManageContent ..> DeleteArticle : extends
+
+Guest --> Register
+Guest --> ReadArticle
+Guest --> RateArticle
+Guest --> Contact
+
+User --> Login
+User --> ReadArticle
+User --> RateArticle
+User --> LeaveOpinion
+User --> Contact
+
+Administrator --> RateArticle
+Administrator --> LeaveOpinion
+Administrator --> ManageContent
+Administrator --> ViewReports
+
+@enduml
