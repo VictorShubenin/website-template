@@ -5,6 +5,8 @@ mixin article-form(title, content, action)
         div.text
             textarea(name="content")= content
         div.file
-            input(type="file", name="image")
+            input.file-upload(type="file", name="image")
         div 
         button Сохранить
+
+

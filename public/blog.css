@@ -92,7 +92,7 @@ section h1 {
 .article-card > img {
 	width: 100%;
 	max-width: 447px;
-	height: auto;
+	height:360px;
 	border-radius: 10px;
 	margin-bottom: 10px;
 }
@@ -129,3 +129,21 @@ section h1 {
 	margin-bottom: 10px;
 }
 
+.link-create{
+	background-color: #c5ce4d;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+	display: block;
+	width: 175px;
+	margin: 0 auto;
+	margin-bottom: 30px;
+}
+
+.link-create:hover{
+	background-color: #a1a84f;
+}

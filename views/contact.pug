@@ -6,7 +6,7 @@ block head
 block content
     if reports 
         each report in reports 
-            div 
+            div.letter 
                 h6= report.subject 
                 div= report.email 
                 p= report.content

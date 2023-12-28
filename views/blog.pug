@@ -16,13 +16,13 @@ block content
         div.article-sort
             h1 Все статьи
         if isAdmin
-            a(href="/articles/create") Добавить статью 
+            a(class="link-create",href="/articles/create") Добавить статью 
         div.articles-container
             each article in articles
                 a(href="/article/" + article.id).article-card
                     div.blog-icon
                         span 
-                            img(src="star.svg", alt="В избранные")
+                          
                         span 
                             img(src="like.svg", alt="Нравится")
                             span.article-like-counter= article.likes_count

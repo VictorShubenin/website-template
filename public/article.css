@@ -16,6 +16,22 @@ h1 {
     line-height: 36px;
 }
 
+
+.title-article{
+	color: #777E15;
+	text-align: center;
+	font-family: Raleway;
+	font-size: 38px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+}
+
+
+
+
+
+
 article {
     text-align: start;
 }
@@ -99,6 +115,7 @@ input::placeholder {
 
 .like{
 	background-color:#8aee47;
+	margin-left: 10px;
 }
 
 .dislike{
@@ -144,14 +161,14 @@ input::placeholder {
 
 
 .user-comment {
-	background-color: #F7FCB8; /* Изменен цвет фона */
+	background-color: #F7FCB8;
 	border-radius: 8px;
 	padding: 12px;
 	margin-top: 20px;
 	overflow: auto;
 	font-family: Raleway;
 	display: flex;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавлена тень */
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 
@@ -160,14 +177,14 @@ input::placeholder {
 }
 
 .user-comment .user-photo img {
-	width: 50px; /* Adjust size as needed */
-	height: 50px; /* Adjust size as needed */
+	width: 50px; 
+	height: 50px; 
 	border-radius: 50%;
 }
 
 .user-comment .user-data {
 	display: flex;
- /* Чтобы элементы выровнялись по вертикали */
+ 
 	
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -175,18 +192,84 @@ input::placeholder {
 
 .user-comment #username {
 	font-weight: bold;
-	margin-right: 10px; /* Добавляем небольшой отступ между именем и текстом */
+	margin-right: 10px; 
 }
 
 .user-comment p {
 	font-size: 16px;
 	line-height: 1.4;
 	color: #333;
-	overflow: visible; /* Отображаем весь текст без обрезки */
-	display: block; /* Используем block для правильного отображения текста */
-	margin-top: 20px; /* Добавляем отступ сверху текста */
+	overflow: visible; 
+	display: block; 
+	margin-top: 20px; 
 }
 
 .file input{
 	resize: none;
+	width: 300px;
+	height: 40px;
+	
+}
+
+ button{
+	background-color: #c5ce4d;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+	
+}
+
+button:hover{
+	background-color: #a1a84f;
+}
+
+.link-edit{
+	background-color: #c5ce4d;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+	display: block;
+	width: 175px;
+	
+	margin-bottom: 10px;
+	margin-top: 10px;
+	margin-left: 10px;
+}
+
+.link-edit:hover{
+	background-color: #a1a84f;
+}
+
+.link-delete{
+	background-color: #c5ce4d;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+	display: block;
+	width: 175px;
+	margin-top: 10px;
+	margin-left: 10px;
+	margin-bottom: 10px;
+}
+
+.link-delete:hover{
+	background-color: #a1a84f;
+}
+
+.admin-btn{
+	display: flex;
+	justify-content: flex-end;
+
 }

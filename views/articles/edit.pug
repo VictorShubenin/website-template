@@ -5,6 +5,6 @@ block head
 
 block content 
     h1 Редактирование статьи
-    p= article.title
+    p.title-article= article.title
     include form.pug
     +article-form(article.title, article.content, "/articles/edit/" + article.id)

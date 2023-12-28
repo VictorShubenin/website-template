@@ -23,9 +23,9 @@ block content
                 span= article.likes_count
 
         if isAdmin
-            div 
-                a(href="/articles/edit/" + article.id) Редактировать статью
-                a(href="/articles/delete/" + article.id) Удалить статью
+            div.admin-btn
+                a(class="link-edit",href="/articles/edit/" + article.id) Редактировать статью
+                a(class="link-delete",href="/articles/delete/" + article.id) Удалить статью
 
         div.input-comment
             if userId
